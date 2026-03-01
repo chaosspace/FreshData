@@ -33,6 +33,15 @@ RSS_SOURCES = [
         'name': 'Google AI',
         'url': 'https://blog.google/technology/ai/rss'
     },
+    # 国内科技
+    {
+        'name': '爱范儿',
+        'url': 'https://www.ifanr.com/feed'
+    },
+    {
+        'name': '钛媒体',
+        'url': 'https://www.tmtpost.com/feed'
+    },
     # 前端相关
     {
         'name': 'Dev.to',
