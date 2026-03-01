@@ -1,0 +1,51 @@
+name: 每日科技资讯推送
+
+on:
+  # 每天早上9:30运行 (北京时间 = UTC 1:30)
+  schedule:
+    - cron: '30 1 * * *'
+  # 支持手动触发
+  workflow_dispatch:
+  # 支持push触发（测试用）
+  push:
+    branches:
+      - main
+
+# 设置环境变量
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  fetch-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 设置Python环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser requests
+
+      # 4. 运行脚本抓取资讯并推送
+      - name: Fetch tech news and push to WeChat
+        env:
+          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+        run: |
+          python fetch_news.py
+
+      # 5. 输出日志
+      - name: Print result
+        if: always()
+        run: |
+          echo "科技资讯推送任务完成"
+          echo "执行时间: $(date)"
