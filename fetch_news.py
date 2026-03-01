@@ -33,14 +33,6 @@ RSS_SOURCES = [
         'name': 'Google AI',
         'url': 'https://blog.google/technology/ai/rss'
     },
-    {
-        'name': 'Vercel Blog',
-        'url': 'https://vercel.com/blog/rss.xml'
-    },
-    {
-        'name': ' Anthropic Blog',
-        'url': 'https://www.anthropic.com/feed'
-    },
     # 前端相关
     {
         'name': 'Dev.to',
