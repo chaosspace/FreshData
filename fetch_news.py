@@ -104,7 +104,13 @@ def fetch_news():
     for source in RSS_SOURCES:
         try:
             print(f"正在抓取: {source['name']}...")
-            feed = feedparser.parse(source['url'], timeout=10)
+
+            # 使用 requests 获取 RSS 内容（支持 timeout）
+            response = requests.get(source['url'], timeout=15)
+            response.raise_for_status()
+
+            # 用 feedparser 解析内容
+            feed = feedparser.parse(response.text)
 
             if feed.bozo:
                 print(f"  ⚠ {source['name']} 解析异常")
