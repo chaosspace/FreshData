@@ -14,39 +14,62 @@ from datetime import datetime, timedelta
 # 请在GitHub Secrets中设置 SERVERCHAN_KEY
 SERVERCHAN_KEY = os.environ.get('SERVERCHAN_KEY', '')
 
-# RSS订阅源列表 (科技类)
+# RSS订阅源列表 (AI + 前后端技术)
 RSS_SOURCES = [
+    # AI 相关
     {
-        'name': '36氪',
-        'url': 'https://www.36kr.com/feed/'
+        'name': 'OpenAI Blog',
+        'url': 'https://openai.com/blog/rss.xml'
     },
     {
-        'name': '科技日报',
-        'url': 'http://stdaily.com/kjrb/yaowen.xml'
+        'name': 'Hugging Face',
+        'url': 'https://huggingface.co/blog/feed.xml'
     },
     {
-        'name': '爱范儿',
-        'url': 'https://www.ifanr.com/feed'
+        'name': 'MIT AI News',
+        'url': 'https://news.mit.edu/rss/topic/artificial-intelligence2'
     },
     {
-        'name': '钛媒体',
-        'url': 'https://www.tmtpost.com/feed'
+        'name': 'Google AI',
+        'url': 'https://blog.google/technology/ai/rss'
     },
     {
-        'name': '雷锋网',
-        'url': 'https://www.leiphone.com/feed'
+        'name': 'Vercel Blog',
+        'url': 'https://vercel.com/blog/rss.xml'
     },
     {
-        'name': '品玩',
-        'url': 'https://www.pingwest.com/feed'
+        'name': ' Anthropic Blog',
+        'url': 'https://www.anthropic.com/feed'
+    },
+    # 前端相关
+    {
+        'name': 'Dev.to',
+        'url': 'https://dev.to/feed'
     },
     {
-        'name': 'TechCrunch',
-        'url': 'https://techcrunch.com/feed/'
+        'name': 'CSS-Tricks',
+        'url': 'https://css-tricks.com/feed/'
     },
     {
-        'name': 'The Verge',
-        'url': 'https://www.theverge.com/rss/index.xml'
+        'name': 'JavaScript Weekly',
+        'url': 'https://javascriptweekly.com/rss'
+    },
+    {
+        'name': 'Frontend Focus',
+        'url': 'https://frontendfoc.us/rss'
+    },
+    # 后端相关
+    {
+        'name': 'Hacker News',
+        'url': 'https://hnrss.org/newest'
+    },
+    {
+        'name': 'Smashing Magazine',
+        'url': 'https://www.smashingmagazine.com/feed/'
+    },
+    {
+        'name': 'GitHub Blog',
+        'url': 'https://github.blog/feed/'
     }
 ]
 
